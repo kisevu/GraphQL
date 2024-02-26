@@ -1,5 +1,7 @@
 package com.ameda.kevin.kisevu.GraphiQL;
 
+import com.ameda.kevin.kisevu.GraphiQL.entity.Book;
+import com.ameda.kevin.kisevu.GraphiQL.repository.BookRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -11,11 +13,11 @@ public class GraphQLApplication {
 		SpringApplication.run(GraphQLApplication.class, args);
 	}
 
-//	@Bean
-//	CommandLineRunner commandLineRunner(BookRepository bookRepository){
-//		return args -> {
-//			Book cleanCode = new Book("Dark clouds","Kevin Ameda Kisevu");
-//			bookRepository.save(cleanCode);
-//		};
-//	}
+	@Bean
+	CommandLineRunner commandLineRunner(BookRepository bookRepository){
+		return args -> {
+			Book cleanCode = new Book("Dark clouds","Kevin Ameda Kisevu");
+			bookRepository.save(cleanCode);
+		};
+	}
 }
